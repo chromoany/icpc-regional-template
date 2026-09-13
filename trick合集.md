@@ -1,7 +1,7 @@
 # trick 合集（总索引）
 
 > 竞赛 trick 速查库，共 **176** 条，按词条分文件存放于 [`trick库/`](trick库/)。
-> 条目格式遵循 [trick 规范.md](trick规范.md)（AlgoWiki《trick 规范手册》）。
+> 条目格式遵循 [AlgoWiki《trick 规范手册》](https://www.algowiki.cn/extra/about?doc=trick-guide)。
 >
 > **来源**：主要来自 [AlgoWiki trick 板块](https://www.algowiki.cn/competitions?tab=tricks)（173 条，条目后标注原作者与点赞数），
 > 另有本人整理的 3 条。抓取日期 2026-09-11。
