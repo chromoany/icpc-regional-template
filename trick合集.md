@@ -3,9 +3,6 @@
 > 竞赛 trick 速查库，共 **176** 条，按词条分文件存放于 [`trick库/`](trick库/)。
 > 条目格式遵循 [AlgoWiki《trick 规范手册》](https://www.algowiki.cn/extra/about?doc=trick-guide)。
 >
-> **来源**：主要来自 [AlgoWiki trick 板块](https://www.algowiki.cn/competitions?tab=tricks)（173 条，条目后标注原作者与点赞数），
-> 另有本人整理的 3 条。抓取日期 2026-09-11。
->
 > 原先手写的 `trick合集.md` 内容已拆入本库：其中与站上重复的 3 条并入对应条目，
 > 独有 3 条（Raney 引理 / 事件差分 / 异或和为零的最小和）保留并标注「本人整理」。
 
