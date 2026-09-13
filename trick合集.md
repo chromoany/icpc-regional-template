@@ -1,178 +1,210 @@
-# trick合集
+# trick 合集（总索引）
 
-[TOC]
+> 竞赛 trick 速查库，共 **176** 条，按词条分文件存放于 [`trick库/`](trick库/)。
+> 条目格式遵循 [trick 规范.md](trick规范.md)（AlgoWiki《trick 规范手册》）。
+>
+> **来源**：主要来自 [AlgoWiki trick 板块](https://www.algowiki.cn/competitions?tab=tricks)（173 条，条目后标注原作者与点赞数），
+> 另有本人整理的 3 条。抓取日期 2026-09-11。
+>
+> 原先手写的 `trick合集.md` 内容已拆入本库：其中与站上重复的 3 条并入对应条目，
+> 独有 3 条（Raney 引理 / 事件差分 / 异或和为零的最小和）保留并标注「本人整理」。
 
+## 分册
 
+| 文件 | 主题 | 条数 |
+|---|---|---|
+| [`trick库/01-数学.md`](trick库/01-数学.md) | 数学 | 43 |
+| [`trick库/02-图论.md`](trick库/02-图论.md) | 图论 | 34 |
+| [`trick库/03-动态规划.md`](trick库/03-动态规划.md) | 动态规划 | 35 |
+| [`trick库/04-数据结构.md`](trick库/04-数据结构.md) | 数据结构 | 14 |
+| [`trick库/05-字符串.md`](trick库/05-字符串.md) | 字符串 | 4 |
+| [`trick库/07-其他.md`](trick库/07-其他.md) | 其他 | 46 |
 
-------
+> 计算几何没有独立分册，相关条目归在「其他」（如鞋带定理、线段穿圆判定、圆上弦交错）。
 
-## 数学
+## 全部条目
 
-------
+| 编号 | 标题 | 词条 | 关键词 | 来源 |
+|---|---|---|---|---|
+| 数学-1 | [$1\sim n$ 的连续按位异或和的规律](trick库/01-数学.md#math-1) | 数学 | 异或 | AlgoWiki @superadmin ♥18（id=8） |
+| 数学-2 | [计算圆周率](trick库/01-数学.md#math-2) | 数学 | 数学 圆周率 | AlgoWiki @Xuan2333 ♥11（id=32） |
+| 数学-3 | [计算n!的末尾0的个数](trick库/01-数学.md#math-3) | 数学 | 数学 | AlgoWiki @颜开 ♥8（id=44） |
+| 数学-4 | [排列中 mex 与 min 的转化](trick库/01-数学.md#math-4) | 数学 | mex min 排列 | AlgoWiki @superadmin ♥8（id=38） |
+| 数学-5 | [平方和展开恒等式](trick库/01-数学.md#math-5) | 数学 | 降次 数学 | AlgoWiki @小宗85 ♥6（id=49） |
+| 数学-6 | [二元最大值/最小值计数转化为长度 + 前缀差分](trick库/01-数学.md#math-6) | 数学 | 计数 | AlgoWiki @一只小艾拉 ♥5（id=36） |
+| 数学-7 | [在小于 $ 10^5 $ 的数中，一个数最多有128个因子。](trick库/01-数学.md#math-7) | 数学 | — | AlgoWiki @Kleaves ♥4（id=20） |
+| 数学-8 | [构建三角形](trick库/01-数学.md#math-8) | 数学 | 构造 数学 | AlgoWiki @观音 ♥3（id=45） |
+| 数学-9 | [O(1)判断组合数奇偶性](trick库/01-数学.md#math-9) | 数学 | 组合数，奇偶 | AlgoWiki @qianwai ♥2（id=67） |
+| 数学-10 | [一个整数如果是11的倍数那么一定满足奇数位偶数位交替相减得到的结果是11的倍数](trick库/01-数学.md#math-10) | 数学 | 数学 | AlgoWiki @腌萝卜干 ♥2（id=39） |
+| 数学-11 | [需要对 $q(q \leq 10^5)$ 个小于等于 $V(V \leq 10^7)$ 的数进行质因数分解，可使用线性筛求出 $minp$，对 $x$ 质因数分解时只需不断将 $x$ 除以 $minp_x$，相较于朴素分解的 $O(q\sqrt{V})$，该做法可将复杂度降至 $O(V+q \log V)$](trick库/01-数学.md#math-11) | 数学 | — | AlgoWiki @7_divided_by_3 ♥2（id=14） |
+| 数学-12 | [同余 $a \equiv b \pmod m$ 的数学等价条件就是 $m$ 能整除 $a-b$。换句话说，$m$ 就是 $\|a-b\|$ 的因数。](trick库/01-数学.md#math-12) | 数学 | — | AlgoWiki @有毒的羊 ♥2（id=13） |
+| 数学-13 | [异或的各种性质可以使用按位拆分，使用 mod 2 加法的方式得出](trick库/01-数学.md#math-13) | 数学 | 位运算 按位拆分 mod | AlgoWiki @znzryb ♥1（id=216） |
+| 数学-14 | [斐波那契数列常用二级结论](trick库/01-数学.md#math-14) | 数学/数据结构 | 斐波那契 gcd 广义斐波那契 区间加 线段树 | AlgoWiki @Descartideal ♥1（id=120） |
+| 数学-15 | [构造相邻二进制数仅相差一位的数组](trick库/01-数学.md#math-15) | 数学 | 格雷码 位运算 | AlgoWiki @Tabr1s ♥1（id=60） |
+| 数学-16 | [n个点组成的多边形面积](trick库/01-数学.md#math-16) | 数学/计算几何 | 向量 计算几何 | AlgoWiki @kendas ♥1（id=59） |
+| 数学-17 | [关于三个数字两两做差的绝对值的最大值转化的小方法](trick库/01-数学.md#math-17) | 数学 | 数学，绝对值 | AlgoWiki @congyu_init ♥1（id=56） |
+| 数学-18 | [与质数相关的复杂度欺骗问题](trick库/01-数学.md#math-18) | 数学 | — | AlgoWiki @GTNewHorizons ♥1（id=26） |
+| 数学-19 | [一个数如果可以不断加k，然后模m，可以到达的数的集合该如何表示呢？](trick库/01-数学.md#math-19) | 数学 | — | AlgoWiki @HeJie ♥1（id=17） |
+| 数学-20 | [逆序对与正序对的总和不变](trick库/01-数学.md#math-20) | 数学 | 逆序对 | AlgoWiki @池鱼（id=215） |
+| 数学-21 | [求连续 111..1 段的个数](trick库/01-数学.md#math-21) | 数学 | 异或 | AlgoWiki @秋千月（id=214） |
+| 数学-22 | [交换次数奇偶性](trick库/01-数学.md#math-22) | 数学 | 数学 | AlgoWiki @goih（id=213） |
+| 数学-23 | [最大化多重集异或和的求和](trick库/01-数学.md#math-23) | 数学 | 线性基，异或 | AlgoWiki @秋千月（id=212） |
+| 数学-24 | [构造排列的和，对 n 取模](trick库/01-数学.md#math-24) | 数学 | 排列，取模 | AlgoWiki @秋千月（id=211） |
+| 数学-25 | [三个有关位运算的有用性质](trick库/01-数学.md#math-25) | 数学 | 位运算 | AlgoWiki @憨憨的竹林（id=210） |
+| 数学-26 | [凸多边形投影期望](trick库/01-数学.md#math-26) | 数学 | 投影 柯西表面积公式 微积分 | AlgoWiki @magallan_forever（id=208） |
+| 数学-27 | [x和y位运算中1的个数](trick库/01-数学.md#math-27) | 数学 | 位运算 | AlgoWiki @goih（id=206） |
+| 数学-28 | [多项式整数根整除常数项](trick库/01-数学.md#math-28) | 数学 | 多项式 整数根 常数项 因数 | AlgoWiki @Descartideal（id=205） |
+| 数学-29 | [区间加组合数用高阶差分](trick库/01-数学.md#math-29) | 数学/数据结构 | 组合数 差分 高阶差分 区间加 | AlgoWiki @Descartideal（id=202） |
+| 数学-30 | [取整与按位运算的不同值常为对数级](trick库/01-数学.md#math-30) | 数学/数据结构 | 整除分块 按位与 按位或 log 不同值 | AlgoWiki @Descartideal（id=179） |
+| 数学-31 | [逆序对奇偶性由置换环数决定](trick库/01-数学.md#math-31) | 数学 | 逆序对 奇偶性 置换 环 排列 | AlgoWiki @Descartideal（id=169） |
+| 数学-32 | [完全平方数用质因数奇偶性表示](trick库/01-数学.md#math-32) | 数学 | 完全平方数 质因数 奇偶性 唯一分解 | AlgoWiki @Descartideal（id=168） |
+| 数学-33 | [光速幂用平方根分块预处理](trick库/01-数学.md#math-33) | 数学/数据结构 | 快速幂 光速幂 根号分块 预处理 | AlgoWiki @Descartideal（id=167） |
+| 数学-34 | [连续上取整可以合并分母](trick库/01-数学.md#math-34) | 数学 | 上取整 连续取整 分母合并 | AlgoWiki @Descartideal（id=162） |
+| 数学-35 | [平均数等于目标转和为零](trick库/01-数学.md#math-35) | 数学/数据结构 | 平均数 减目标 前缀和 子数组 | AlgoWiki @Descartideal（id=161） |
+| 数学-36 | [多维绝对值枚举符号展开](trick库/01-数学.md#math-36) | 数学/数据结构 | 绝对值 曼哈顿距离 符号枚举 维度 | AlgoWiki @Descartideal（id=156） |
+| 数学-37 | [复杂区间修改用矩阵维护](trick库/01-数学.md#math-37) | 数学/数据结构 | 矩阵 线段树 区间修改 线性变换 | AlgoWiki @Descartideal（id=143） |
+| 数学-38 | [绝对众数可用摩尔投票信息维护](trick库/01-数学.md#math-38) | 数学/数据结构 | 绝对众数 摩尔投票 结合律 区间众数 | AlgoWiki @Descartideal（id=117） |
+| 数学-39 | [再一个矩形统计覆盖特定单元格的子正方形数量](trick库/01-数学.md#math-39) | 数学 | 贡献法 | AlgoWiki @congyu_init（id=57） |
+| 数学-40 | [Bit Tricks](trick库/01-数学.md#math-40) | 数学 | 位运算 数学 | AlgoWiki @joww（id=34） |
+| 数学-41 | [枚举区间gcd或按位与的种类数](trick库/01-数学.md#math-41) | 数学 | 区间gcd | AlgoWiki @usedchang（id=19） |
+| 数学-42 | [Raney 引理（循环引理 Cycle Lemma）](trick库/01-数学.md#math-42) | 数学 | Raney 循环引理 卡特兰数 Ballot 前缀和 | 本人整理 |
+| 数学-43 | [异或和为零的 n 个正整数的最小和](trick库/01-数学.md#math-43) | 数学 | 异或 构造 最小和 | 本人整理 |
+| 图论-1 | [图上度数的trick](trick库/02-图论.md#graph-1) | 图论 | — | AlgoWiki @GTNewHorizons ♥4（id=28） |
+| 图论-2 | [最远点性质](trick库/02-图论.md#graph-2) | 图论 | 树 | AlgoWiki @qianwai ♥2（id=68） |
+| 图论-3 | [关于二分图最小点覆盖的一种建图方式，以及其操作方式](trick库/02-图论.md#graph-3) | 图论/数据结构/计算几何 | — | AlgoWiki @Aurorawlm ♥2（id=25） |
+| 图论-4 | [**竞赛图**：基图为无向完全图的有向简单图。](trick库/02-图论.md#graph-4) | 图论 | — | AlgoWiki @joww ♥1（id=33） |
+| 图论-5 | [拓扑队列中的零入度点互不可达](trick库/02-图论.md#graph-5) | 图论 | 拓扑排序 零入度 可达性 DAG | AlgoWiki @Descartideal（id=204） |
+| 图论-6 | [传递闭包用 bitset 加速](trick库/02-图论.md#graph-6) | 图论/数据结构 | 传递闭包 bitset Floyd DAG 可达性 | AlgoWiki @Descartideal（id=200） |
+| 图论-7 | [LGV 引理处理不交路径计数](trick库/02-图论.md#graph-7) | 图论/数学 | LGV 行列式 不交路径 计数 | AlgoWiki @Descartideal（id=193） |
+| 图论-8 | [树上两条链交用四个 LCA 求](trick库/02-图论.md#graph-8) | 图论 | 树链交 LCA 路径 相交判定 | AlgoWiki @Descartideal（id=192） |
+| 图论-9 | [最小割贡献拆成三类布尔项](trick库/02-图论.md#graph-9) | 图论 | 最小割 网络流 布尔函数 建模 | AlgoWiki @Descartideal（id=188） |
+| 图论-10 | [点边容斥处理树上集合交](trick库/02-图论.md#graph-10) | 图论/数学 | 树 点边容斥 连通块 集合交 | AlgoWiki @Descartideal（id=187） |
+| 图论-11 | [最小乘积生成树用凸包分治](trick库/02-图论.md#graph-11) | 图论/数学 | 生成树 最小乘积 凸包 分治 MST | AlgoWiki @Descartideal（id=186） |
+| 图论-12 | [点到根距离权重和转子树权重和](trick库/02-图论.md#graph-12) | 图论/数据结构 | 树 距离和 子树权重 换根 | AlgoWiki @Descartideal（id=184） |
+| 图论-13 | [虚树贡献用 dfn 相邻距离维护](trick库/02-图论.md#graph-13) | 图论/数据结构 | 虚树 dfn 相邻距离 set 动态点集 | AlgoWiki @Descartideal（id=175） |
+| 图论-14 | [删除操作用时间线段树分治](trick库/02-图论.md#graph-14) | 图论/数据结构 | 线段树分治 删除操作 动态连通 回滚 | AlgoWiki @Descartideal（id=147） |
+| 图论-15 | [链加单点与单点加链对偶转化](trick库/02-图论.md#graph-15) | 图论/数据结构 | 树上差分 链加 单点查 子树和 对偶 | AlgoWiki @Descartideal（id=144） |
+| 图论-16 | [树剖边权转点权](trick库/02-图论.md#graph-16) | 图论/数据结构 | 树链剖分 边权转点权 dfn 路径查询 | AlgoWiki @Descartideal（id=140） |
+| 图论-17 | [图直径限制所有点最远距离范围](trick库/02-图论.md#graph-17) | 图论 | 图直径 最远距离 半径 距离界 | AlgoWiki @Descartideal（id=139） |
+| 图论-18 | [LCA 路径拆成向上和向下两段](trick库/02-图论.md#graph-18) | 图论/数据结构 | LCA 路径拆分 上行 下行 树上统计 | AlgoWiki @Descartideal（id=138） |
+| 图论-19 | [边至少或恰好经过一次考虑欧拉路](trick库/02-图论.md#graph-19) | 图论 | 欧拉路 边覆盖 至少一次 恰好一次 | AlgoWiki @Descartideal（id=137） |
+| 图论-20 | [完全图特殊边权用 Boruvka 优化 MST](trick库/02-图论.md#graph-20) | 图论/数据结构 | 完全图 最小生成树 Boruvka Trie 异或 | AlgoWiki @Descartideal（id=136） |
+| 图论-21 | [点权边权互相转化](trick库/02-图论.md#graph-21) | 图论/数据结构 | 点权 边权 拆点 树链 路径查询 | AlgoWiki @Descartideal（id=135） |
+| 图论-22 | [时间信息转分层图](trick库/02-图论.md#graph-22) | 图论 | 分层图 时间 状态图 最短路 DP | AlgoWiki @Descartideal（id=133） |
+| 图论-23 | [次数限制拆点转网络流](trick库/02-图论.md#graph-23) | 图论 | 网络流 拆点 次数限制 容量 | AlgoWiki @Descartideal（id=132） |
+| 图论-24 | [Dijkstra 出队顺序定向成 DAG](trick库/02-图论.md#graph-24) | 图论 | Dijkstra DAG 最短路 偏序 出队顺序 | AlgoWiki @Descartideal（id=131） |
+| 图论-25 | [用一次项系数统计贡献和](trick库/02-图论.md#graph-25) | 图论/数学 | 一次项系数 多项式 贡献和 生成树 矩阵树定理 | AlgoWiki @Descartideal（id=108） |
+| 图论-26 | [树上操作从叶子向根构造](trick库/02-图论.md#graph-26) | 图论 | 树 从叶向根 构造 奇偶度 欧拉回路 | AlgoWiki @Descartideal（id=101） |
+| 图论-27 | [无向图边可拆成双向边跑网络流](trick库/02-图论.md#graph-27) | 图论 | 网络流 无向图 双向边 最大流 最小割 | AlgoWiki @Descartideal（id=99） |
+| 图论-28 | [以主环为基准求有向环交](trick库/02-图论.md#graph-28) | 图论 | 有向环 环交 主环 差分 DFS | AlgoWiki @Descartideal（id=96） |
+| 图论-29 | [给无向边定向优化枚举](trick库/02-图论.md#graph-29) | 图论 | 无向边定向 三元环 度数 根号分治 枚举优化 | AlgoWiki @Descartideal（id=95） |
+| 图论-30 | [用生成树基本环表示无向图任意环](trick库/02-图论.md#graph-30) | 图论/数学 | 生成树 基本环 异或环 线性基 奇环覆盖 | AlgoWiki @Descartideal（id=92） |
+| 图论-31 | [用质因数虚点优化 gcd 连边图](trick库/02-图论.md#graph-31) | 图论/数学 | 质因数 虚点 gcd建图 BFS 最短路 | AlgoWiki @Descartideal（id=87） |
+| 图论-32 | [将无向图问题转到生成树上处理](trick库/02-图论.md#graph-32) | 图论/数据结构 | 生成树 非树边 树上差分 桥 环 操作图转树 | AlgoWiki @Descartideal（id=82） |
+| 图论-33 | [树上多点 LCA](trick库/02-图论.md#graph-33) | 图论 | 图论 lca dfn序 | AlgoWiki @Kendieer（id=78） |
+| 图论-34 | [换根后求两点的lca](trick库/02-图论.md#graph-34) | 图论 | lca | AlgoWiki @yanyu666（id=77） |
+| 动态规划-1 | [Dilworth 定理：关于最长上升子序列（LIS）](trick库/03-动态规划.md#dp-1) | 动态规划/数据结构 | Dilworth 最长上升子序列 LIS | AlgoWiki @Zaoly ♥7（id=41） |
+| 动态规划-2 | [三项等差子序列类比回文处理](trick库/03-动态规划.md#dp-2) | 动态规划/字符串 | 等差子序列 回文 中心 枚举 | AlgoWiki @Descartideal（id=203） |
+| 动态规划-3 | [子集求和使用高维前缀和](trick库/03-动态规划.md#dp-3) | 动态规划/数学 | SOS DP 高维前缀和 子集求和 状压 | AlgoWiki @Descartideal（id=201） |
+| 动态规划-4 | [LCS 转 LIS 优化匹配复杂度](trick库/03-动态规划.md#dp-4) | 动态规划/字符串 | LCS LIS 匹配位置 序列转化 | AlgoWiki @Descartideal（id=189） |
+| 动态规划-5 | [值域限制选数按值从小到大 DP](trick库/03-动态规划.md#dp-5) | 动态规划/数学 | 值域 DP 选数 单调 枚举值 | AlgoWiki @Descartideal（id=183） |
+| 动态规划-6 | [期望用尾和公式改写](trick库/03-动态规划.md#dp-6) | 动态规划/数学 | 期望 尾和公式 概率 随机变量 | AlgoWiki @Descartideal（id=182） |
+| 动态规划-7 | [DP 取值少时只维护断点](trick库/03-动态规划.md#dp-7) | 动态规划/数据结构 | DP 断点 分段函数 取值少 | AlgoWiki @Descartideal（id=181） |
+| 动态规划-8 | [WQS 二分处理带数量限制最优化](trick库/03-动态规划.md#dp-8) | 动态规划/数学 | WQS二分 带权二分 数量限制 DP | AlgoWiki @Descartideal（id=180） |
+| 动态规划-9 | [势能法求期望步数](trick库/03-动态规划.md#dp-9) | 动态规划/数学 | 势能法 期望 随机过程 步数 | AlgoWiki @Descartideal（id=178） |
+| 动态规划-10 | [CDQ 外套决策单调性手动分层](trick库/03-动态规划.md#dp-10) | 动态规划/数据结构 | CDQ分治 决策单调性 莫队式贡献 DP | AlgoWiki @Descartideal（id=177） |
+| 动态规划-11 | [决策单调性可用整体分治找决策点](trick库/03-动态规划.md#dp-11) | 动态规划 | 决策单调性 整体分治 DP优化 | AlgoWiki @Descartideal（id=176） |
+| 动态规划-12 | [方案数平方和转同类有序对计数](trick库/03-动态规划.md#dp-12) | 动态规划/数学 | 平方和 有序对 方案计数 同类 | AlgoWiki @Descartideal（id=170） |
+| 动态规划-13 | [奇怪幂贡献考虑组合意义](trick库/03-动态规划.md#dp-13) | 动态规划/数学 | 幂 组合意义 贡献转化 计数 | AlgoWiki @Descartideal（id=163） |
+| 动态规划-14 | [恰好 k 转钦定 k 后容斥](trick库/03-动态规划.md#dp-14) | 动态规划/数学 | 恰好k 容斥 钦定 至少k | AlgoWiki @Descartideal（id=160） |
+| 动态规划-15 | [最大子段和的局部最优性质](trick库/03-动态规划.md#dp-15) | 动态规划 | 最大子段和 局部性质 前缀 后缀 | AlgoWiki @Descartideal（id=159） |
+| 动态规划-16 | [01 序列 LNDS 转最大前缀和](trick库/03-动态规划.md#dp-16) | 动态规划/字符串 | 01序列 LNDS 最大前缀和 转化 | AlgoWiki @Descartideal（id=158） |
+| 动态规划-17 | [存在性转为反面全不满足](trick库/03-动态规划.md#dp-17) | 动态规划/数学 | 存在性 补集 容斥 全不满足 | AlgoWiki @Descartideal（id=155） |
+| 动态规划-18 | [因数倍数 DP 写成迪利克雷卷积](trick库/03-动态规划.md#dp-18) | 动态规划/数学 | 迪利克雷卷积 因数 倍数 DP 反演 积性 | AlgoWiki @Descartideal（id=151） |
+| 动态规划-19 | [强制选或禁用询问用前后缀 DP](trick库/03-动态规划.md#dp-19) | 动态规划 | 前后缀DP 强制选择 禁用物品 查询合并 | AlgoWiki @Descartideal（id=150） |
+| 动态规划-20 | [最值比较问题放到笛卡尔树上](trick库/03-动态规划.md#dp-20) | 动态规划/数据结构 | 笛卡尔树 RMQ 最值 分治 区间 | AlgoWiki @Descartideal（id=148） |
+| 动态规划-21 | [树形 DP 反向保存祖先信息](trick库/03-动态规划.md#dp-21) | 动态规划/图论 | 树形DP 祖先信息 换根 反向状态 | AlgoWiki @Descartideal（id=134） |
+| 动态规划-22 | [差分贡献使 DP 转移单调](trick库/03-动态规划.md#dp-22) | 动态规划 | 差分贡献 DP 单调性 贡献不降 | AlgoWiki @Descartideal（id=125） |
+| 动态规划-23 | [交换值域与状态](trick库/03-动态规划.md#dp-23) | 动态规划/数据结构 | 值域 状态 交换维度 DP 优化 | AlgoWiki @Descartideal（id=124） |
+| 动态规划-24 | [镜像法消除 DP 边界限制](trick库/03-动态规划.md#dp-24) | 动态规划/数学 | 镜像法 边界 DP 反射 容斥 | AlgoWiki @Descartideal（id=123） |
+| 动态规划-25 | [区间形态合法性转区间 DP](trick库/03-动态规划.md#dp-25) | 动态规划 | 区间DP 合法区间 合并 区间结构 | AlgoWiki @Descartideal（id=122） |
+| 动态规划-26 | [延迟贡献处理暂时无法确定的决策](trick库/03-动态规划.md#dp-26) | 动态规划 | 延迟贡献 DP 组合计数 暂不统计 | AlgoWiki @Descartideal（id=118） |
+| 动态规划-27 | [按操作对二进制位的影响划分过程](trick库/03-动态规划.md#dp-27) | 动态规划/数学 | 二进制 位运算 进位 状态划分 操作过程 | AlgoWiki @Descartideal（id=112） |
+| 动态规划-28 | [个数和值域小但答案大时做数位 DP](trick库/03-动态规划.md#dp-28) | 动态规划/数学 | 数位DP 进位 小值域 大答案 计数 | AlgoWiki @Descartideal（id=109） |
+| 动态规划-29 | [在精度允许时舍弃高阶小贡献](trick库/03-动态规划.md#dp-29) | 动态规划/数学 | 精度 舍弃贡献 期望 DP 矩阵快速幂 | AlgoWiki @Descartideal（id=107） |
+| 动态规划-30 | [用强制性描述 DP 状态](trick库/03-动态规划.md#dp-30) | 动态规划 | DP状态 强制选择 强制不选 状态设计 | AlgoWiki @Descartideal（id=93） |
+| 动态规划-31 | [用耳分解处理强连通或边双连通子图](trick库/03-动态规划.md#dp-31) | 动态规划/图论 | 耳分解 强连通 边双连通 状压DP | AlgoWiki @Descartideal（id=90） |
+| 动态规划-32 | [将直方图横向分解为笛卡尔树](trick库/03-动态规划.md#dp-32) | 动态规划/数据结构 | 直方图 笛卡尔树 横向分解 树形DP | AlgoWiki @Descartideal（id=89） |
+| 动态规划-33 | [DAG 的分层图仍可按 DAG 处理](trick库/03-动态规划.md#dp-33) | 动态规划/图论 | DAG 分层图 缩点 拓扑序 反悔一次 | AlgoWiki @Descartideal（id=85） |
+| 动态规划-34 | [图上分治避免重复计算未受影响部分](trick库/03-动态规划.md#dp-34) | 动态规划/图论 | 图上分治 分治 Floyd 可撤销并查集 删除点 重复计算 | AlgoWiki @Descartideal（id=84） |
+| 动态规划-35 | [用矩阵快速幂加速固定边数 Floyd](trick库/03-动态规划.md#dp-35) | 动态规划/图论 | Floyd 矩阵快速幂 min-plus 恰好k条边 最短路 | AlgoWiki @Descartideal（id=80） |
+| 数据结构-1 | [尾部撤销用线段树分治维护](trick库/04-数据结构.md#ds-1) | 数据结构 | 线段树分治 撤销 回滚 尾部撤销 | AlgoWiki @Descartideal（id=197） |
+| 数据结构-2 | [BIT 可线性重构](trick库/04-数据结构.md#ds-2) | 数据结构 | 树状数组 BIT 线性建树 重构 | AlgoWiki @Descartideal（id=194） |
+| 数据结构-3 | [启发式分裂保证总复杂度](trick库/04-数据结构.md#ds-3) | 数据结构 | 启发式分裂 set 分裂 均摊复杂度 | AlgoWiki @Descartideal（id=185） |
+| 数据结构-4 | [摩尔投票维护区间高频候选](trick库/04-数据结构.md#ds-4) | 数据结构 | 摩尔投票 区间众数 高频候选 线段树 | AlgoWiki @Descartideal（id=174） |
+| 数据结构-5 | [静态区间单调栈用倍增处理](trick库/04-数据结构.md#ds-5) | 数据结构 | 单调栈 倍增 静态区间 跳表 | AlgoWiki @Descartideal（id=172） |
+| 数据结构-6 | [存在性二维数点只维护另一维最值](trick库/04-数据结构.md#ds-6) | 数据结构 | 二维数点 存在性 区间最值 扫描线 | AlgoWiki @Descartideal（id=171） |
+| 数据结构-7 | [并查集维护集合和支持单点改权](trick库/04-数据结构.md#ds-7) | 数据结构 | 并查集 集合和 单点修改 权值 | AlgoWiki @Descartideal（id=166） |
+| 数据结构-8 | [数颜色转为统计前驱位置](trick库/04-数据结构.md#ds-8) | 数据结构 | 数颜色 pre 前驱 莫队 主席树 树状数组 | AlgoWiki @Descartideal（id=146） |
+| 数据结构-9 | [主席树视作静态树套树](trick库/04-数据结构.md#ds-9) | 数据结构 | 主席树 静态树套树 可持久化 权值线段树 | AlgoWiki @Descartideal（id=141） |
+| 数据结构-10 | [用圆上弦端点交错判断圆内直线交点](trick库/04-数据结构.md#ds-10) | 数据结构/计算几何 | 弦交错 圆 直线交点 极角排序 BIT 扫描线 | AlgoWiki @Descartideal（id=114） |
+| 数据结构-11 | [分块 ST 表降低 RMQ 空间](trick库/04-数据结构.md#ds-11) | 数据结构 | ST表 分块 RMQ 区间最值 空间优化 | AlgoWiki @Descartideal（id=102） |
+| 数据结构-12 | [BIT 倍增替代二分套树状数组](trick库/04-数据结构.md#ds-12) | 数据结构 | 树状数组 BIT倍增 二分 前缀和 单峰 | AlgoWiki @Descartideal（id=91） |
+| 数据结构-13 | [单侧递归线段树处理区间可见性](trick库/04-数据结构.md#ds-13) | 数据结构 | 线段树 单侧递归 区间合并 可见楼房 最大斜率 | AlgoWiki @Descartideal（id=88） |
+| 数据结构-14 | [动态确定节点带权树的重心](trick库/04-数据结构.md#ds-14) | 数据结构 | 线段树二分，倍增 | AlgoWiki @Starflowrain（id=74） |
+| 字符串-1 | [给定字符集和长度可以构建多少个回文串最长为1的字符串](trick库/05-字符串.md#str-1) | 字符串 | 字符串 | AlgoWiki @池鱼（id=209） |
+| 字符串-2 | [Trie 上两串 LCP 等于 LCA 深度](trick库/05-字符串.md#str-2) | 字符串/数据结构 | Trie LCP LCA 字符串 前缀 | AlgoWiki @Descartideal（id=165） |
+| 字符串-3 | [整数拍扁成 01 前缀表示差值](trick库/05-字符串.md#str-3) | 字符串/数学 | 01表示 popcount 绝对值 拍扁 | AlgoWiki @Descartideal（id=164） |
+| 字符串-4 | [Trie 上交换子树实现值域操作](trick库/05-字符串.md#str-4) | 字符串/数据结构 | Trie 01Trie 交换子树 xor or and 值域线段树 | AlgoWiki @Descartideal（id=113） |
+| 其他-1 | [判断可重集合是否相等](trick库/07-其他.md#misc-1) | 其他 | 可重集合 随机 哈希 | AlgoWiki @OneWan ♥11（id=40） |
+| 其他-2 | [约数小诈骗](trick库/07-其他.md#misc-2) | 其他 | — | AlgoWiki @Zvelig9 ♥3（id=30） |
+| 其他-3 | [令 $(x, y) \to (x + y, x - y)$。 则$\|x_1 - x_2\| + \|y_1 - y_2\| = \max(\|x'_1 - x'_2\|, \|y'_1 - y'_2\|)$](trick库/07-其他.md#misc-3) | 其他 | — | AlgoWiki @有毒的羊 ♥3（id=18） |
+| 其他-4 | [$\left\lfloor \frac{N}{M} \right\rfloor \bmod 10007 = \left\lfloor \frac{N \bmod (10007 \times M)}{M} \right\rfloor$](trick库/07-其他.md#misc-4) | 其他 | — | AlgoWiki @HeJie ♥3（id=15） |
+| 其他-5 | [快速求 n个数的 popcount 和](trick库/07-其他.md#misc-5) | 其他/数学 | 位运算 | AlgoWiki @皮特教练 ♥2（id=53） |
+| 其他-6 | [数组区间加等差数列](trick库/07-其他.md#misc-6) | 其他 | 等差数列 | AlgoWiki @mktx ♥1（id=70） |
+| 其他-7 | [无精度误差判断线段穿过圆](trick库/07-其他.md#misc-7) | 其他/计算几何 | 计算几何 | AlgoWiki @kendas ♥1（id=61） |
+| 其他-8 | [Ferrers 转化](trick库/07-其他.md#misc-8) | 其他 | — | AlgoWiki @3159238606 ♥1（id=11） |
+| 其他-9 | [树上点集直径合并](trick库/07-其他.md#misc-9) | 其他 | 线段树 lca | AlgoWiki @3213556403@qq.com（id=207） |
+| 其他-10 | [区间翻转排列只影响少量断点](trick库/07-其他.md#misc-10) | 其他/数据结构 | 排列 区间翻转 断点 连续段 | AlgoWiki @Descartideal（id=199） |
+| 其他-11 | [最大化集合最小值时从大到小扫描](trick库/07-其他.md#misc-11) | 其他/数据结构 | 最大化最小值 扫描线 阈值 可行性 | AlgoWiki @Descartideal（id=198） |
+| 其他-12 | [离线后动态维护当前状态](trick库/07-其他.md#misc-12) | 其他/数据结构 | 离线 扫描线 动态维护 降维 | AlgoWiki @Descartideal（id=196） |
+| 其他-13 | [二进制分组应对强制在线](trick库/07-其他.md#misc-13) | 其他/数据结构 | 二进制分组 强制在线 半动态 合并 | AlgoWiki @Descartideal（id=195） |
+| 其他-14 | [操作可逆时寻找标准中间状态](trick库/07-其他.md#misc-14) | 其他/图论 | 可逆操作 中间状态 双向 BFS 构造 | AlgoWiki @Descartideal（id=191） |
+| 其他-15 | [折半搜索处理 n 约 40 的状压](trick库/07-其他.md#misc-15) | 其他/数学 | Meet in the Middle 折半搜索 状压 枚举 | AlgoWiki @Descartideal（id=190） |
+| 其他-16 | [前 k 大方案用堆维护后继状态](trick库/07-其他.md#misc-16) | 其他/数据结构 | 前k大 优先队列 后继状态 堆 | AlgoWiki @Descartideal（id=173） |
+| 其他-17 | [随意交换抽象成置换环](trick库/07-其他.md#misc-17) | 其他/数学 | 置换 环 交换 排列 | AlgoWiki @Descartideal（id=157） |
+| 其他-18 | [减法变换尝试扩展为取模变换](trick库/07-其他.md#misc-18) | 其他/数学 | 取模 减法 欧几里得 操作优化 | AlgoWiki @Descartideal（id=154） |
+| 其他-19 | [删除困难时维护前后缀结构](trick库/07-其他.md#misc-19) | 其他/数据结构 | 前缀 后缀 删除 线性基 除法 | AlgoWiki @Descartideal（id=153） |
+| 其他-20 | [反悔贪心处理动态选择](trick库/07-其他.md#misc-20) | 其他/数据结构 | 反悔贪心 优先队列 动态选择 后悔 | AlgoWiki @Descartideal（id=152） |
+| 其他-21 | [大 k 的第 k 小查询用随机二分](trick库/07-其他.md#misc-21) | 其他/数据结构 | 第k小 随机二分 排名 查询 | AlgoWiki @Descartideal（id=149） |
+| 其他-22 | [出现次数问题优先考虑根号分治](trick库/07-其他.md#misc-22) | 其他/数据结构 | 出现次数 根号分治 大小分类 高频 低频 | AlgoWiki @Descartideal（id=145） |
+| 其他-23 | [二维限制排序后一维维护](trick库/07-其他.md#misc-23) | 其他/数据结构 | 二维偏序 排序 扫描线 一维维护 | AlgoWiki @Descartideal（id=142） |
+| 其他-24 | [树拓扑序最优化用邻项交换](trick库/07-其他.md#misc-24) | 其他/图论 | 树 拓扑序 邻项交换 贪心 排序 | AlgoWiki @Descartideal（id=130） |
+| 其他-25 | [合法性判定同时维护增减方向](trick库/07-其他.md#misc-25) | 其他/数学 | 二分答案 合法区间 单调方向 判定 | AlgoWiki @Descartideal（id=129） |
+| 其他-26 | [NFA 状态集合转 DFA 计数](trick库/07-其他.md#misc-26) | 其他/动态规划/字符串 | NFA DFA 自动机 状态集合 计数 | AlgoWiki @Descartideal（id=128） |
+| 其他-27 | [不少于一半类条件用随机候选](trick库/07-其他.md#misc-27) | 其他/数学 | 随机化 多数元素 不少于一半 候选 检验 | AlgoWiki @Descartideal（id=127） |
+| 其他-28 | [大值域互异限制映射到小值域](trick库/07-其他.md#misc-28) | 其他/数学 | 值域压缩 互异 鸽巢原理 小值域 映射 | AlgoWiki @Descartideal（id=126） |
+| 其他-29 | [三维偏序判定降为二维偏序](trick库/07-其他.md#misc-29) | 其他/数据结构 | 三维偏序 二维偏序 排序 支配关系 | AlgoWiki @Descartideal（id=121） |
+| 其他-30 | [将动态可行决策转为随机排列决策](trick库/07-其他.md#misc-30) | 其他/动态规划/数学 | 随机排列 期望 可行决策 线性性 | AlgoWiki @Descartideal（id=119） |
+| 其他-31 | [模糊答案可按二的幂压缩值域](trick库/07-其他.md#misc-31) | 其他/数学 | 近似答案 二进制 值域压缩 二倍限制 | AlgoWiki @Descartideal（id=116） |
+| 其他-32 | [钦定不再操作的元素简化序列过程](trick库/07-其他.md#misc-32) | 其他/动态规划 | 钦定 不操作元素 排列DP 后缀 状态压缩 | AlgoWiki @Descartideal（id=115） |
+| 其他-33 | [用前缀和或差分重解释操作](trick库/07-其他.md#misc-33) | 其他/图论/数据结构 | 前缀和 差分 操作转化 异或前缀 交换相邻 | AlgoWiki @Descartideal（id=111） |
+| 其他-34 | [用抽屉原理转化比例上界构造](trick库/07-其他.md#misc-34) | 其他/数学 | 抽屉原理 构造 比例上界 染色 支配集 | AlgoWiki @Descartideal（id=110） |
+| 其他-35 | [枚举区间最值时只枚举较短一侧](trick库/07-其他.md#misc-35) | 其他/数据结构 | 最值分治 单调栈 区间最大值 枚举较短侧 | AlgoWiki @Descartideal（id=106） |
+| 其他-36 | [先模拟到稳定阶段再换做法](trick库/07-其他.md#misc-36) | 其他/动态规划 | 分阶段 模拟 稳定性质 DAG DP 阈值 | AlgoWiki @Descartideal（id=105） |
+| 其他-37 | [将权值减下标消去连续递增限制](trick库/07-其他.md#misc-37) | 其他/数据结构 | 权值减下标 连续递增 等差 区间覆盖 | AlgoWiki @Descartideal（id=104） |
+| 其他-38 | [将操作离线倒序处理](trick库/07-其他.md#misc-38) | 其他/数据结构 | 离线 倒序 并查集 区间覆盖 删点变加点 | AlgoWiki @Descartideal（id=103） |
+| 其他-39 | [循环区间滑动时用连续性保证取等](trick库/07-其他.md#misc-39) | 其他/数学 | 循环区间 滑动窗口 连续性 01串 构造 | AlgoWiki @Descartideal（id=100） |
+| 其他-40 | [按阈值将序列值域转为 01](trick库/07-其他.md#misc-40) | 其他/数据结构 | 值域转01 二分答案 区间排序 线段树 阈值 | AlgoWiki @Descartideal（id=98） |
+| 其他-41 | [用补集转化子集限制](trick库/07-其他.md#misc-41) | 其他/图论/数学 | 补集 独立集 点覆盖 子集计数 参数化 | AlgoWiki @Descartideal（id=94） |
+| 其他-42 | [合法括号串拼接产生 `)(` 断点](trick库/07-其他.md#misc-42) | 其他/字符串 | 括号串 合法括号串 拼接 连通块 断点 | AlgoWiki @Descartideal（id=86） |
+| 其他-43 | [将二元组约束转化为图上连边](trick库/07-其他.md#misc-43) | 其他/图论 | 二元组 连边 差分 图建模 约束转图 | AlgoWiki @Descartideal（id=83） |
+| 其他-44 | [倍增优化区间并查集合并](trick库/07-其他.md#misc-44) | 其他/数据结构 | 并查集 倍增 ST表 区间相等 区间合并 | AlgoWiki @Descartideal（id=81） |
+| 其他-45 | [奇偶位取反转化相邻同项操作](trick库/07-其他.md#misc-45) | 其他/字符串 | 奇偶位取反 01串 相邻同项 相邻异项 相邻交换 | AlgoWiki @Descartideal（id=79） |
+| 其他-46 | [事件差分 + 坐标离散化：静态区间覆盖次数统计](trick库/07-其他.md#misc-46) | 数据结构 | 事件差分 扫描线 离散化 区间覆盖 覆盖次数 | 本人整理 |
 
+## 收录口径
 
-
-### 1∼*n* 的连续按位异或和的规律
-
-设
-
-$$
-S(n)=1\oplus 2\oplus 3\oplus \cdots \oplus n
-$$
-
-则有：
-
-$$
-S(n)=
-\begin{cases}
-n, & n\bmod 4=0 \\
-1, & n\bmod 4=1 \\
-n+1, & n\bmod 4=2 \\
-0, & n\bmod 4=3
-\end{cases}
-$$
-
-------
-
-### 圆周率在代码中的表示
-
-在部分题目中可能会需要圆周率的计算并且需要较高精度，此时 
-~~直接const double  pi  3.141592653589793不就行了吗~~ 
-就可以优雅的用 `#define pi acos(-1)` 来实现，也就是 `arccos(-1) = π` 来实现
-
------
-
-### Raney 引理（循环引理 Cycle Lemma）
-
-**陈述**
-
-- 标准（Raney）：整数序列 $a_1,\dots,a_n$，若 $\sum a_i = 1$，则**恰好存在一个**循环移位使所有前缀和 $>0$。
-- 推广（Dvoretzky–Motzkin 循环引理）：若 $\sum a_i = k>0$，则**恰好有 $k$ 个**循环移位使所有前缀和 $>0$。
-
-**证明（前缀和定位）**
-
-设 $S_0=0,\ S_j=\sum_{i=1}^j a_i$，取 $S$ 最小值**首次出现**的位置 $j_0$，以 $j_0+1$ 为起点旋转即满足所有前缀和 $>0$（旋转后任一前缀 $=S_t-S_{j_0}>0$）。唯一性反证：若两个不同起点都合法，中间会出现前缀和 $\le 0$，矛盾。推广情形同理：最小值每出现一次给出一个合法起点，恰出现 $k$ 次。
-
-**应用 1：推卡特兰数（核心）**
-
-$n{+}1$ 个 $+1$、$n$ 个 $-1$（和 $=1$，长 $2n+1$）。全体 $\binom{2n+1}{n}$ 个序列按循环移位分组（总和 $\ne0$ ⇒ 无周期，每组 $2n+1$ 个），由 Raney 每组恰 $1$ 个好序列，故好序列数 $=\dfrac{\binom{2n+1}{n}}{2n+1}$。好序列首项必为 $+1$，删去首项 ⇔ $n$ 对合法括号序列（前缀和 $\ge0$），于是
-
-$$\text{Cat}(n)=\frac{\binom{2n+1}{n}}{2n+1}=\frac{\binom{2n}{n}}{n+1}$$
-
-**应用 2：Ballot 定理**
-
-A 得 $a$ 票、B 得 $b$ 票（$a>b$），A 全程**严格领先**的计票顺序数为 $\dfrac{a-b}{a+b}\dbinom{a+b}{a}$（$+1/-1$ 各 $a/b$ 个，循环引理下每个轨道恰 $a-b$ 个好序列）。
-
-**应用 3：环上找合法起点**
-
-环上元素 $\pm1$ 且总和 $>0$，求多少个起点能走完全程且前缀和恒正：由循环引理恰有「总和」个，一次 $O(n)$ 扫前缀和最小值定位。
-
-**注意**
-
-- 别混淆两种条件：Raney（和 $=1$，前缀和 $>0$）vs 括号序列（和 $=0$，前缀和 $\ge0$）；后者**加一个 $+1$** 归一到 Raney 情形。
-- 总和 $\le0$ 时不存在前缀和全正的循环移位。
-- 计数时警惕循环同构（轨道）去重，先确认序列无周期。
-
------
-
-## 动态规划
-
------
-
-### Dilworth 定理：关于最长上升子序列（LIS）
-
-数列的最长**单调增加**子序列的长度，等于可将该数列划分成**单调不增**子序列的最少数量。
-
-数列的最长**单调减少**子序列的长度，等于可将该数列划分成**单调不减**子序列的最少数量。
-
-数列的最长**单调不减**子序列的长度，等于可将该数列划分成**单调减少**子序列的最少数量。
-
-数列的最长**单调不增**子序列的长度，等于可将该数列划分成**单调增加**子序列的最少数量。
-
------
-## 构造
-----
-#### 异或和为零的n个正整数的最小和
-
-$n$ 为偶数：全为$1$，和为$n$
-$n$ 为奇数：一个 $2$，一个 $3$，剩下全为 $1$，和为 $n+3$
-
------
-
-## 数据结构 / 扫描线
-
------
-
-### 事件差分 + 坐标离散化：静态区间覆盖次数统计
-
-**模型**
-
-给定若干闭区间 $[l,r]$（坐标可达 $10^{18}$，无法开数组），问：恰好被覆盖 $k$ 次的点数、被覆盖位置上的最小/最大覆盖次数、覆盖总点数。做法：每条区间产生事件 $(l,+1)$、$(r+1,-1)$；排序后同一坐标的事件先合并，从最小坐标扫起——处理完 $pos$ 处全部事件后的 `cur`，就是段 $[pos,\text{下一事件坐标})$ 内每个点的覆盖次数，把段长累加进 `len[cur]` 即可。排序合并端点即完成离散化。
-
-复杂度 $O(m\log m)$，空间 $O(m)$（覆盖次数上限 = 区间数 $m$）。
-
-**口径与坑（写代码前先定死）**
-
-- 闭区间语义：$r$ 本身仍被覆盖，到 $r+1$ 才减一。
-- min 有两种问法，答案不同：
-  - 只问被覆盖过的位置：取 `len[1..m]` 中第一个/最后一个非零下标（$mn/mx$）；
-  - 问任意位置（含没被覆盖的 0）：全局最小 $=\begin{cases}0,&len[0]>0\\ mn,&\text{否则}\end{cases}$。
-- `len[0]` 只统计区间与区间之间的空隙段；开放前缀/后缀（第一个左端点之前、最后一个右端点之后）不统计，所以不能用它推断"全坐标域"的 0 覆盖。
-- 环形区间（坐标域 $1..R$）：$[l,r]$ 且 $l>r$ 表示跨过 $R$，拆成 $[l,R]$ 与 $[1,r]$ 两条再跑；环无空隙，跑完 `len[0]` 应为 0，可当正确性校验。
-
-**应用锚点（典题）**
-
-- CF 1000C Covered Points Count：输出 $ans[k]=len[k]$（$k=1..m$）。
-- 洛谷 P1496：覆盖总长 $=\sum_{k\ge1} len[k]$。
-
-**演示代码（输入：$m$ + $m$ 行 $l\ r$，输出恰好被覆盖 $1..m$ 次的点数）**
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-
-const int N = 300005;
-int m;
-ll cur, pos, sum;
-ll len[N];
-vector<pair<ll, ll>> ev;
-
-int main()
-{
-    scanf("%d", &m);
-    for (int i = 1; i <= m; i++)
-    {
-        ll l, r;
-        scanf("%lld%lld", &l, &r);
-        ev.push_back({l, 1});
-        ev.push_back({r + 1, -1});
-    }
-    sort(ev.begin(), ev.end());
-    cur = 0;
-    for (int i = 0; i < (int)ev.size();)
-    {
-        pos = ev[i].first;
-        sum = 0;
-        while (i < (int)ev.size() && ev[i].first == pos)
-        {
-            sum += ev[i].second;
-            i++;
-        }
-        cur += sum;
-        if (i < (int)ev.size())
-        {
-            len[cur] += ev[i].first - pos;
-        }
-    }
-    for (int k = 1; k <= m; k++)
-    {
-        printf("%lld%c", len[k], k == m ? '\n' : ' ');
-    }
-    return 0;
-}
-```
-
-**不能套用（重要反例）**
-
-圆环上"往返滚动 / 折线运动"导致的接触次数最值（如 QOJ 17269 Jolly Wheel 欢乐轮：轮周每点接触地面次数的 min/max）**不是**静态区间覆盖：残余弧的两个端点要拆成"折点事件"（起点、每次换向、终点各计一次），整圈数与"恰好回到折点余数"的点耦合，段内计数用的是开区间；把每次操作当成静态区间硬套本 trick 会连样例都错（min/max 各挂一种）。这类题的关键是先把滚动模型转成"圆环上的折线路径 mod 环长"，再谈扫描。
+- 剔除「只有代码片段、没有知识点」与「没有明确结论」的条目（本次剔除 3 条）。
+- 清洗掉批量条目里跨条重复的模板套话段，保留核心思路、结论、易错点与例题链接。
+- 不收录单题题解；条目必须是可复用的技巧、结论、转化或优化方法。
