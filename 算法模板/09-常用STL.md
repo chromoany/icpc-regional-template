@@ -203,32 +203,194 @@ while (l <= r)
 
 ## 8. string 常用操作
 
+### 8a. 构造、长度、拼接、比较
+
 ```cpp
-string s = "abcabc";                       // 样例串
+string s = "abcabc";                       // 直接初始化
+string t(5, 'x');                          // 5 个 'x'："xxxxx"
+string u = s + "def";                      // 拼接（生成新串）
+s += "def";                                // 原地拼接（推荐，不产生临时对象）
+s.append(3, '!');                          // 末尾接 3 个 '!'
+s.push_back('Z');                          // 末尾加一个字符
+s.pop_back();                              // 删掉最后一个字符
 
-int p = (int)s.find("bc");                 // 子串第一次出现的位置；没找到返回 string::npos
-if (p == (int)string::npos) { /* 没找到 */ }
-string t = s.substr(0, 3);                 // 从位置 0 开始取 3 个字符（越界自动截到末尾）
-string tail = s.substr(2);                 // 从位置 2 取到末尾
-s += "def";                                // 末尾拼接
-reverse(s.begin(), s.end());               // 原地反转
-int len = (int)s.length();                 // 长度
+int len = (int)s.size();                   // 长度（size() 与 length() 等价）
+bool emp = s.empty();                      // 是否为空（比 s.size() == 0 快）
+s.clear();                                 // 清空
+s.resize(3);                               // 截断到长度 3（变长时补 '\0'）
+s.reserve(1000);                           // 预留容量：大量 += 前调一次，少反复扩容
 
-// 数字 <-> 字符串
-string num = to_string(12345);             // 数字转字符串
-long long v = stoll(num);                  // 字符串转 long long（int 用 stoi）
-char c = 'A';
-string one = string(1, c);                 // 单个字符转成字符串
+// 比较：== != < > 都是字典序，逐字符比 ASCII（"ab" < "b"、"ab" < "abc"）
+bool same = (s == t);
+int c = s.compare(t);                      // >0 / =0 / <0
+```
 
-// 按空白拆一串数：先放一行里再拆
-string line = "10 20 30";
-stringstream ss(line);                     // 需要 <sstream>（bits 已带）
-int val;
-vector<int> nums;
-while (ss >> val) nums.push_back(val);
+### 8b. 查找（find 家族）
 
-// 读一整行：getline(cin, line);
-// 注意：前面用过 cin >> 时，要先 cin.ignore() 再 getline，否则 getline 读到残留的空行
+```cpp
+string s = "abcabc", sub = "bc";
+
+int p = (int)s.find(sub);                  // 第一次出现的位置，找不到返回 string::npos
+int p2 = (int)s.find(sub, 2);              // 从下标 2 开始往后找
+int r = (int)s.rfind(sub);                 // 最后一次出现的位置（从后往前找）
+
+// 判断“存在 / 不存在”就这么写，别拿 int 和 -1 直接比
+if (s.find(sub) == string::npos) { /* 不存在 */ }
+
+// 字符集版本的查找：参数是"字符集合"，不是子串
+int f1 = (int)s.find_first_of("xyz");       // 第一个属于 "xyz" 的字符位置
+int f2 = (int)s.find_first_not_of("abc");   // 第一个不属于 "abc" 的字符位置
+int f3 = (int)s.find_last_of("abc");        // 最后一个属于 "abc" 的字符位置
+
+// 找出 sub 的所有出现位置（经典写法：pos 从上一个位置 +1 继续）
+for (size_t pos = s.find(sub); pos != string::npos; pos = s.find(sub, pos + 1))
+{
+    // pos 是这次匹配的起点
+}
+// 上面这种写法允许重叠（"aaa" 里找 "aa" 会得到 2 处）；
+// 要不重叠匹配，把 pos + 1 改成 pos + sub.size()
+```
+
+### 8c. 取子串、替换、删除、插入
+
+```cpp
+string s = "hello world";
+
+string a = s.substr(0, 5);                 // 从下标 0 起取 5 个 → "hello"
+string b = s.substr(6);                    // 从下标 6 取到末尾 → "world"
+string c = s.substr(6, 100);               // 长度超界自动截到末尾（不报错、不抛异常）
+
+s.replace(0, 5, "hi");                     // 把 [0,5) 这段换成 "hi" → "hi world"
+s.insert(2, "XX");                         // 在下标 2 前插入 "XX"
+s.insert(2, 3, 'X');                       // 在下标 2 前插入 3 个 'X'
+s.erase(2, 3);                             // 删除从下标 2 开始的 3 个字符
+s.erase(s.begin() + 2);                    // 删除单个字符（迭代器版）
+s.erase(s.begin() + 1, s.begin() + 4);     // 删除 [1,4) 区间
+
+// 相邻去重（配合 unique，用前先 sort）
+sort(s.begin(), s.end());
+s.erase(unique(s.begin(), s.end()), s.end());
+```
+
+### 8d. 数字与字符串互转
+
+```cpp
+string num = to_string(12345);             // 整数转字符串
+string dnum = to_string(3.14);             // 浮点转字符串会输出 6 位小数："3.140000"
+                                           // 要别的精度用 snprintf / ostringstream 控制
+int a = stoi("123");                       // 字符串转 int
+long long b = stoll("123456789012");        // 转 long long
+double d = stod("3.14");                   // 转 double
+
+// 坑：stoi("") / stoi("abc") 抛 std::invalid_argument；stoi("99999999999") 抛 std::out_of_range
+//     保险写法：先判空与字符合法性，或整串 try 捕获
+
+// 从串里依次取出所有整数（含负数）：stringstream 版，最省心
+string t = "10 20 -30";
+stringstream ss(t);
+int v;
+while (ss >> v) { /* 用 v */ }
+
+// char 数组里循环取数：strtol 会自动把指针推过整个数字，不需要 substr
+char buf[] = "10 20 -30";
+char *p = buf;
+while (*p)
+{
+    if (isdigit((unsigned char)*p) || (*p == '-' && isdigit((unsigned char)p[1])))
+    {
+        char *q;
+        int x = (int)strtol(p, &q, 10);    // q 被推到数字末尾
+        p = q;
+        // 用 x
+    }
+    else p++;                              // 跳过非数字字符
+}
+```
+
+### 8e. 字符判断与大小写
+
+```cpp
+char ch = 'a';
+bool d1 = isdigit((unsigned char)ch);      // 是否数字 '0'~'9'
+bool d2 = isalpha((unsigned char)ch);      // 是否字母
+bool d3 = isupper((unsigned char)ch);      // 是否大写
+bool d4 = isspace((unsigned char)ch);      // 是否空白（空格 / \t / \n）
+char lo = (char)tolower((unsigned char)ch); // 转小写
+char hi = (char)toupper((unsigned char)ch); // 转大写
+// 注意：这些函数参数是 int，传 char 一定要 (unsigned char) 强转，
+//       否则负值字符（中文 / 扩展 ASCII）在部分平台会越界，行为未定义
+
+// 整串转小写 / 大写：必须用 lambda 包一层，否则 ::tolower 重载会冲突
+string s = "AbC1";
+transform(s.begin(), s.end(), s.begin(), [](char c) { return (char)tolower((unsigned char)c); });
+// 转大写把 tolower 换成 toupper
+
+// 计数 / 逐个字符扫
+int cnt = (int)count(s.begin(), s.end(), 'a');
+for (char c : s) if (isdigit((unsigned char)c)) { /* ... */ }
+```
+
+### 8f. 分割、拼接、前后缀
+
+```cpp
+// 按分隔符切分（单字符分隔符）：getline 带第三参
+string line = "a,b,,c";
+vector<string> parts;
+stringstream ss(line);
+string item;
+while (getline(ss, item, ',')) parts.push_back(item);
+// 注意：连续分隔符会产生空串（这里能切出 4 段，第 3 段是空的），按需过滤
+// for (auto &x : parts) if (!x.empty()) { ... }
+
+// 拼回去（join）
+string joined;
+for (auto &x : parts)
+{
+    if (!joined.empty()) joined += ',';
+    joined += x;
+}
+
+// 判断前缀 / 后缀（C++17 没有 starts_with，C++20 才有，这样写最稳）
+string s = "abcdef", pre = "abc", suf = "def";
+bool has_pre = (s.size() >= pre.size() && s.compare(0, pre.size(), pre) == 0);
+bool has_suf = (s.size() >= suf.size() && s.compare(s.size() - suf.size(), suf.size(), suf) == 0);
+
+// 与 char 数组互转
+const char *cp = s.c_str();                // string → const char*（只读，别改）
+char arr[] = "hello";
+string fromArr = arr;                      // char[] → string
+```
+
+### 8g. 读入（cin / getline 的空行坑）
+
+```cpp
+string s;
+cin >> s;                                  // 读到空白（空格 / 换行）为止，不含空白
+getline(cin, s);                           // 读一整行（含空格，不含行尾换行）
+
+// 坑：cin >> 之后紧接 getline 会读到残留的换行，必须先吃掉
+int n;
+cin >> n;
+cin.ignore();                              // 丢掉残留的换行（也可 cin.ignore(1, '\n')）
+string line;
+getline(cin, line);
+
+// 一直读到 EOF
+while (getline(cin, line)) { /* 处理 line */ }
+
+// 行首可能有空白时：getline(cin >> ws, line)，ws 会先吞掉前导空白
+```
+
+### 8h. string_view（C++17，只读且零拷贝）
+
+```cpp
+// 只做比较 / 切片 / 查找、不改内容时用它，避免大量子串拷贝（长串高频操作时提速明显）
+string s = "hello world";
+string_view sv(s);
+string_view mid = sv.substr(6, 5);         // 不产生任何字符拷贝
+size_t p = sv.find("world");               // 接口和 string 基本一致
+cout << mid << '\n';                       // 输出 world
+// 注意：string_view 不拥有内存，原 string 一旦销毁或重新分配，view 立即失效
 ```
 
 ## 9. pair / tuple / sort：打包排序与取值
