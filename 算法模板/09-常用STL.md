@@ -505,3 +505,59 @@ struct pair_hash
 // unordered_map<pair<int, int>, int, pair_hash> mp2;
 // unordered_set<ll, custom_hash> hs;
 ```
+
+## 12. pbds 平板电视：有序统计树 / 哈希表 / 可并堆
+
+GNU 扩展库（`__gnu_pbds`），**g++ 自带，赛场可用**（Codeforces / 牛客的 g++ 都行）。头文件写 `#include <bits/extc++.h>` 就一次包含全部（同时也包含 `bits/stdc++.h`），比 `bits/stdc++.h` + 三个 pbds 头省事。
+
+```cpp
+#include <bits/extc++.h>
+using namespace std;
+using namespace __gnu_pbds;      // pbds 的东西都在这个命名空间里
+
+// —— ① tree：有序统计树（平衡树），支持排名与第 k 小，比手写 FHQ 省事 ——
+// 模板参数：<键类型, 映射值类型（做 set 写 null_type）, 比较器, 底层树, 更新节点大小的策略>
+tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> t;   // 当 set 用
+tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_order_statistics_node_update> ms;   // 当 multiset 用（键里再塞个编号就不会被去重）
+tree<int, long long, less<int>, rb_tree_tag, tree_order_statistics_node_update> mp2;                        // 当 map 用
+
+// —— ② gp_hash_table：比 unordered_map 更快的哈希表（默认哈希会被 hack，正式比赛加 custom_hash）——
+gp_hash_table<long long, int> gmp;    // 防卡写法：gp_hash_table<ll, int, custom_hash> gmp;（custom_hash 见附录 A）
+
+// —— ③ 配对堆：比 std::priority_queue 多了 modify / join / erase，代价是常数略大 ——
+__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag> heap;                 // 小根；要大根把 greater 换成 less
+__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag>::point_iterator it;   // 指向堆内元素，modify 时用
+
+int main()
+{
+    t.insert(1);                     // 插入：重复插入无效（和 set 一样）
+    t.insert(5);
+    t.insert(3);
+    t.erase(5);                      // 按键删除
+    int r = t.order_of_key(3);       // 排名：严格小于 3 的元素个数（0 基，这里 = 1）
+    int kth = *t.find_by_order(0);   // 第 0 小（0 基），越界返回 t.end()，用前先判 != t.end()
+    int cnt = t.size();              // 元素个数
+
+    gmp[123] = 7;                    // 用法与 unordered_map 完全一致
+    if (gmp.find(123) != gmp.end())  // 查找；遍历 / erase 也一样
+    {
+        int v = gmp[123];
+    }
+
+    heap.push(4);                    // push / top / pop 与 std::priority_queue 相同
+    heap.push(2);
+    heap.push(9);
+    int big = heap.top();            // 堆顶 = 2（小根）
+    heap.pop();                      // 弹出堆顶
+    it = heap.push(5);               // push 返回该元素的迭代器
+    heap.modify(it, 0);              // 把该元素改成 0
+}
+```
+
+使用说明：
+- **tree 没有内置的"第 k 大"**：第 k 大 = `*t.find_by_order(t.size() - k)`；前驱 / 后继用 `order_of_key` 转化：后继 = `*t.find_by_order(t.order_of_key(x))`（若 `x` 本身在树里则是 `order_of_key(x)+1`）。
+- **tree 的复杂度**是 $O(\log n)$ 每次操作，常数比手写 treap 大；只在"要排名 / 第 k 小又不想写平衡树"时用。底层 `rb_tree_tag` 通用，`splay_tree_tag` 常数更小但更易退化。
+- **gp_hash_table 的迭代顺序不稳定**，不要依赖遍历顺序；`.resize(n)` 预分配能再快一截。
+- **配对堆 / `__gnu_pbds::priority_queue` 与 `std::priority_queue` 接口不同**：没有 `clear()`（用 `heap = decltype(heap)();` 清空）、`size()`/`empty()` 有；`join` 可 $O(1)$ 合并两个堆（`a.join(b)` 后 b 被掏空），Dijkstra 的"可并堆优化"和"需要修改堆中元素"的题用它。
+- 只需 pbds 单个组件时也可分别 include：`<ext/pb_ds/assoc_container.hpp>` + `<ext/pb_ds/tree_policy.hpp>`（tree）、`<ext/pb_ds/priority_queue.hpp>`（堆）。
+- **注意**：pbds 不属于 C++ 标准，判题机若是 clang / MSVC 可能没有；ICPC 与国内 OJ 的 g++ 环境都有。
