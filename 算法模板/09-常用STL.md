@@ -518,15 +518,19 @@ using namespace __gnu_pbds;      // pbds 的东西都在这个命名空间里
 // —— ① tree：有序统计树（平衡树），支持排名与第 k 小，比手写 FHQ 省事 ——
 // 模板参数：<键类型, 映射值类型（做 set 写 null_type）, 比较器, 底层树, 更新节点大小的策略>
 tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> t;   // 当 set 用
-tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_order_statistics_node_update> ms;   // 当 multiset 用（键里再塞个编号就不会被去重）
-tree<int, long long, less<int>, rb_tree_tag, tree_order_statistics_node_update> mp2;                        // 当 map 用
+// 当 multiset 用（键里再塞一个编号就不会被去重）
+tree<pair<int, int>, null_type, less<pair<int, int>>,
+     rb_tree_tag, tree_order_statistics_node_update> ms;
+tree<int, long long, less<int>, rb_tree_tag, tree_order_statistics_node_update> mp2;   // 当 map 用
 
-// —— ② gp_hash_table：比 unordered_map 更快的哈希表（默认哈希会被 hack，正式比赛加 custom_hash）——
-gp_hash_table<long long, int> gmp;    // 防卡写法：gp_hash_table<ll, int, custom_hash> gmp;（custom_hash 见附录 A）
+// —— ② gp_hash_table：比 unordered_map 更快的哈希表 ——
+// 默认哈希会被 hack，正式比赛加 custom_hash
+// 防卡写法：gp_hash_table<ll, int, custom_hash> gmp;（custom_hash 见附录 A）
+gp_hash_table<long long, int> gmp;
 
 // —— ③ 配对堆：比 std::priority_queue 多了 modify / join / erase，代价是常数略大 ——
-__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag> heap;                 // 小根；要大根把 greater 换成 less
-__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag>::point_iterator it;   // 指向堆内元素，modify 时用
+__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag> heap;   // 小根；要大根换成 less
+__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag>::point_iterator it;   // modify 用
 
 int main()
 {
