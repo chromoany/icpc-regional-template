@@ -508,7 +508,7 @@ struct pair_hash
 
 ## 12. pbds 平板电视：有序统计树 / 哈希表 / 可并堆
 
-GNU 扩展库（`__gnu_pbds`），**g++ 自带，赛场可用**（Codeforces / 牛客的 g++ 都行）。头文件写 `#include <bits/extc++.h>` 就一次包含全部（同时也包含 `bits/stdc++.h`），比 `bits/stdc++.h` + 三个 pbds 头省事。
+GNU 扩展库（`__gnu_pbds`），**g++ 自带，主流竞赛环境都可用**。头文件写 `#include <bits/extc++.h>` 就一次包含全部（同时也包含 `bits/stdc++.h`），比 `bits/stdc++.h` + 三个 pbds 头省事。
 
 ```cpp
 #include <bits/extc++.h>
