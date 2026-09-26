@@ -1,7 +1,6 @@
 # ICPC 区域赛算法模板
 
 [![PDF 更新](https://img.shields.io/github/release-date/chromoany/icpc-regional-template?style=flat-square&label=PDF%20%E6%9B%B4%E6%96%B0&color=2ea44f)](https://github.com/chromoany/icpc-regional-template/releases/latest)
-[![下载量](https://img.shields.io/github/downloads/chromoany/icpc-regional-template/total?style=flat-square&label=%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://github.com/chromoany/icpc-regional-template/releases)
 [![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC0%201.0-lightgrey?style=flat-square)](LICENSE)
 [![问题反馈](https://img.shields.io/github/issues/chromoany/icpc-regional-template?style=flat-square&label=%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88)](https://github.com/chromoany/icpc-regional-template/issues)
 
