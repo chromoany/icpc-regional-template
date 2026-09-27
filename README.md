@@ -1,5 +1,7 @@
 # ICPC 区域赛算法模板
 
+**中文** · [English](README.en.md)
+
 [![PDF 更新](https://img.shields.io/github/release-date/chromoany/icpc-regional-template?style=flat-square&label=PDF%20%E6%9B%B4%E6%96%B0&color=2ea44f)](https://github.com/chromoany/icpc-regional-template/releases/latest)
 [![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC0%201.0-lightgrey?style=flat-square)](LICENSE)
 [![问题反馈](https://img.shields.io/github/issues/chromoany/icpc-regional-template?style=flat-square&label=%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88)](https://github.com/chromoany/icpc-regional-template/issues)
@@ -8,12 +10,13 @@
 
 ## 下载 PDF
 
-不想 clone 仓库、只想打印一份带走的话，直接下这两个文件 —— 由 [folio](https://github.com/chromoany/folio) 排版，A4 幅面，目录页码是排版后的真实页码、可点击跳转：
+不想 clone 仓库、只想打印一份带走的话，直接下这三个文件 —— 由 [folio](https://github.com/chromoany/folio) 排版，A4 幅面，目录页码是排版后的真实页码、可点击跳转：
 
 | 文件 | 内容 | 页数 | 大小 |
 |---|---|---|---|
 | [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | `算法模板/` 全部 11 个专题（快读 → 公式结论速查） | 205 | 5.2 MB |
 | [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | `trick库/` 六个分册（数学 / 图论 / 动态规划 / 数据结构 / 字符串 / 其他） | 65 | 1.8 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick合集.md` 总索引 + `trick库/` 六个分册 | 292 | 7.5 MB |
 
 上表链接恒指向**最新版**：仓库只保留当前一版 PDF，不存档历史版本，排版更新直接覆盖。版本日期与排版参数见 [Releases](https://github.com/chromoany/icpc-regional-template/releases) 页面。
 
@@ -79,4 +82,4 @@
 
 ---
 
-维护：[@chromoany](https://github.com/chromoany)　最后更新：2026-09-26
+维护：[@chromoany](https://github.com/chromoany)　最后更新：2026-09-28
