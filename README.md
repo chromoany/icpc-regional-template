@@ -16,7 +16,7 @@
 |---|---|---|---|
 | [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | `算法模板/` 全部 11 个专题（快读 → 公式结论速查） | 240 | 5.2 MB |
 | [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | `trick库/` 六个分册（数学 / 图论 / 动态规划 / 数据结构 / 字符串 / 其他） | 80 | 1.8 MB |
-| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 339 | 7.1 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 338 | 7.1 MB |
 
 上表链接恒指向**最新版**：仓库只保留当前一版 PDF，不存档历史版本，排版更新直接覆盖。版本日期与排版参数见 [Releases](https://github.com/chromoany/icpc-regional-template/releases) 页面。
 
@@ -70,7 +70,7 @@
 
 - 全部完整模板（155 个）通过 `g++ -std=c++17 -O2 -fsyntax-only` 语法检查，可自行复现：把代码块存为 `.cpp` 后运行同一条命令。
 - [`00-索引.md`](算法模板/00-索引.md) 末尾按批次列出了各模板的验证状态——做过数值对拍的标注对拍方式与结果，其余为「仅编译验证」，首次使用前建议先跑一遍样例。
-- 排版约束：代码单行控制在 100 字符宽以内（中文按 2 字符计），超出在转 A4 PDF 时会被裁掉且编译不报错，详见索引开头的说明。
+- 排版约束：代码单行控制在 100 字符宽以内（中文按 2 字符计），超出在转 A4 PDF 时会被裁掉且编译不报错。
 
 ## 许可
 
