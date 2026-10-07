@@ -16,9 +16,9 @@ If you would rather print a copy than clone the repo, grab these files — types
 
 | File | Contents | Pages | Size |
 |---|---|---|---|
-| [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | All 11 topics of `算法模板/` (fast IO → formula cheat sheet) | 205 | 5.2 MB |
-| [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | The six volumes of `trick库/` (math / graphs / DP / data structures / strings / other) | 65 | 1.8 MB |
-| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | Everything above in one book: the 11 template topics + the six trick volumes | 289 | 7.1 MB |
+| [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | All 11 topics of `算法模板/` (fast IO → formula cheat sheet) | 240 | 5.2 MB |
+| [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | The six volumes of `trick库/` (math / graphs / DP / data structures / strings / other) | 80 | 1.8 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | Everything above in one book: the 11 template topics + the six trick volumes | 328 | 6.9 MB |
 
 Those links always point at the **latest** release: only the current version is kept, older ones are not archived. Typesetting parameters and the version date live on the [Releases](https://github.com/chromoany/icpc-regional-template/releases) page.
 
@@ -26,7 +26,7 @@ Those links always point at the **latest** release: only the current version is 
 
 ### `算法模板/` — one file per topic
 
-The entry point is **[`算法模板/00-索引.md`](算法模板/00-索引.md)**, which lists every template plus a "merging notes" section (global variable name clashes when you paste several templates into one file).
+One file per topic. Every template is its own `## N. Title` section, so search the topic file below for a keyword (all 155 templates live inside these 11 files).
 
 | File | Topic |
 |---|---|
@@ -61,17 +61,17 @@ Some entries were reorganised from public submissions on [AlgoWiki](https://www.
 
 ## How to use it
 
-- Looking for an algorithm: check the template index in [`00-索引.md`](算法模板/00-索引.md) first, then search the matching topic file. If the template you need is missing, the "variants" section of a nearby template usually tells you how to adapt one.
+- Looking for an algorithm: pick the topic from the table above, then search that file for a keyword (each template is a `## N. Title` section). If the template you need is missing, the "variants" section of a nearby template usually tells you how to adapt one.
 - Every template is its own section: applicable model / complexity / code / usage notes / variants. Each code block carries the headers it needs — **paste it, add `main`, submit**.
-- Read the "merging notes" at the end of the index before pasting several templates into one file; that is where the global variable name clashes are listed.
+- Before pasting several templates into one file, rename the global variables they share (the usual clashes are `dp / dis / vis / nxt / cnt / pre`); the full clash table is kept locally and is not published here.
 - Code style: plain competitive code without comments (`09-常用STL` and `06-计算几何` are reference sheets and are the exception), global variables with static arrays, braces on their own line, arguments passed as indices rather than arrays, fast IO via `read()/readll()`.
 - To print a copy: see [Download the PDFs](#download-the-pdfs); each book ships with a table of contents and page numbers.
 
 ## Verification
 
 - All 155 complete templates pass `g++ -std=c++17 -O2 -fsyntax-only`. You can reproduce it by saving a code block as a `.cpp` and running the same command.
-- The end of [`00-索引.md`](算法模板/00-索引.md) lists the verification status of each template by batch — those that were cross-checked against a brute force say how and with what result, the rest are "compile-checked only". Run a sample before using them for the first time.
-- Typesetting constraint: keep code lines within 100 characters (count a CJK character as 2). Longer lines get clipped when converting to A4 PDF, and the compiler says nothing about it — see the note at the top of the index.
+- Per-template verification status (which templates were cross-checked against a brute force and how; the rest are "compile-checked only") is no longer published with this repository. Run a sample before using a template for the first time.
+- Typesetting constraint: keep code lines within 100 characters (count a CJK character as 2). Longer lines get clipped when converting to A4 PDF, and the compiler says nothing about it.
 
 ## License
 
@@ -83,4 +83,4 @@ Issues and pull requests are welcome if you spot a mistake or want to add a temp
 
 ---
 
-Maintained by [@chromoany](https://github.com/chromoany) · Last updated: 2026-09-28
+Maintained by [@chromoany](https://github.com/chromoany) · Last updated: 2026-10-07

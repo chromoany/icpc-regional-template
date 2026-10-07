@@ -16,7 +16,7 @@
 |---|---|---|---|
 | [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | `算法模板/` 全部 11 个专题（快读 → 公式结论速查） | 240 | 5.2 MB |
 | [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | `trick库/` 六个分册（数学 / 图论 / 动态规划 / 数据结构 / 字符串 / 其他） | 80 | 1.8 MB |
-| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 338 | 7.1 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 328 | 6.9 MB |
 
 上表链接恒指向**最新版**：仓库只保留当前一版 PDF，不存档历史版本，排版更新直接覆盖。版本日期与排版参数见 [Releases](https://github.com/chromoany/icpc-regional-template/releases) 页面。
 
@@ -24,7 +24,7 @@
 
 ### `算法模板/` · 按专题分文件
 
-入口是 **[`算法模板/00-索引.md`](算法模板/00-索引.md)**，含完整模板清单与模板总目录。
+一个专题一个文件，完整模板（155 个）在文件内按 `## N. 名称` 编号成节；想按关键词找某个模板，直接在对应专题文件里搜。
 
 | 文件 | 专题 |
 |---|---|
@@ -60,7 +60,7 @@
 
 ## 怎么用
 
-- 找算法：先查 [`00-索引.md`](算法模板/00-索引.md) 的「模板总目录」，再在对应专题文件里搜关键词；库内没有的按模板「变体」一节的指引自行补。
+- 找算法：先按上表定位专题，再在该专题文件里搜关键词（每个模板都是 `## N. 名称` 一节）；库内没有的按模板「变体」一节的指引自行补。
 - 每个模板是独立章节：适用模型 / 复杂度 / 代码 / 使用说明 / 变体。代码块自带所需头文件，**复制后补 `main` 即可提交**。
 - 多个模板拼进同一份代码时注意全局变量重名（各模板都是独立编译写的）：粘完先编译一遍，再把同名不同义的 `dp / dis / vis / nxt / cnt / pre` 等整体改名。
 - 代码风格：纯净代码无注释（`09-常用STL`、`06-计算几何` 两个速查文件例外）、全局变量 + 静态数组、大括号换行、传参传下标不传数组、快读 `read()/readll()`。
@@ -69,7 +69,7 @@
 ## 验证
 
 - 全部完整模板（155 个）通过 `g++ -std=c++17 -O2 -fsyntax-only` 语法检查，可自行复现：把代码块存为 `.cpp` 后运行同一条命令。
-- [`00-索引.md`](算法模板/00-索引.md) 末尾按批次列出了各模板的验证状态——做过数值对拍的标注对拍方式与结果，其余为「仅编译验证」，首次使用前建议先跑一遍样例。
+- 各模板的验证状态（做过数值对拍的记了方式与结果，其余为「仅编译验证」）不再随仓库发布；没有对拍记录的模板，首次使用前建议先跑一遍样例。
 - 排版约束：代码单行控制在 100 字符宽以内（中文按 2 字符计），超出在转 A4 PDF 时会被裁掉且编译不报错。
 
 ## 许可
@@ -82,4 +82,4 @@
 
 ---
 
-维护：[@chromoany](https://github.com/chromoany)　最后更新：2026-09-28
+维护：[@chromoany](https://github.com/chromoany)　最后更新：2026-10-07
