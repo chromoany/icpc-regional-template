@@ -14,9 +14,9 @@
 
 | 文件 | 内容 | 页数 | 大小 |
 |---|---|---|---|
-| [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | `算法模板/` 全部 11 个专题（快读 → 公式结论速查） | 240 | 5.2 MB |
+| [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | `算法模板/` 全部 11 个专题（快读 → 公式结论速查） | 238 | 5.2 MB |
 | [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | `trick库/` 六个分册（数学 / 图论 / 动态规划 / 数据结构 / 字符串 / 其他） | 80 | 1.8 MB |
-| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 328 | 6.9 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | 上面两份合成一本：`算法模板/` 11 个专题 + `trick库/` 六个分册 | 326 | 6.9 MB |
 
 上表链接恒指向**最新版**：仓库只保留当前一版 PDF，不存档历史版本，排版更新直接覆盖。版本日期与排版参数见 [Releases](https://github.com/chromoany/icpc-regional-template/releases) 页面。
 
