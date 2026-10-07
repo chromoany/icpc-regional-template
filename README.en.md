@@ -18,7 +18,7 @@ If you would rather print a copy than clone the repo, grab these files — types
 |---|---|---|---|
 | [**`icpc-template.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-template.pdf) | All 11 topics of `算法模板/` (fast IO → formula cheat sheet) | 238 | 5.2 MB |
 | [**`icpc-tricks.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-tricks.pdf) | The six volumes of `trick库/` (math / graphs / DP / data structures / strings / other) | 80 | 1.8 MB |
-| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | Everything above in one book: the 11 template topics + the six trick volumes | 326 | 6.9 MB |
+| [**`icpc-merged.pdf`**](https://github.com/chromoany/icpc-regional-template/releases/latest/download/icpc-merged.pdf) | Everything above in one book: the 11 template topics + the six trick volumes | 328 | 7.1 MB |
 
 Those links always point at the **latest** release: only the current version is kept, older ones are not archived. Typesetting parameters and the version date live on the [Releases](https://github.com/chromoany/icpc-regional-template/releases) page.
 
