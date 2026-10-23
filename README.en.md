@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-CC0%201.0-lightgrey?style=flat-square)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/chromoany/icpc-regional-template?style=flat-square&label=issues)](https://github.com/chromoany/icpc-regional-template/issues)
 
-A personal ICPC regional-contest library: `算法模板/` holds **155 ready-to-compile templates**, and `trick合集.md` + `trick库/` collect **176 contest tricks** — meant for pre-contest review and offline lookup (the printed PDFs are the intended way to read them during a contest).
+A personal ICPC regional-contest library: `算法模板/` holds **156 ready-to-compile templates**, and `trick合集.md` + `trick库/` collect **176 contest tricks** — meant for pre-contest review and offline lookup (the printed PDFs are the intended way to read them during a contest).
 
 > The template sources and the trick library are written in Chinese; this file only describes the repository. The PDFs are Chinese as well.
 
@@ -26,7 +26,7 @@ Those links always point at the **latest** release: only the current version is 
 
 ### `算法模板/` — one file per topic
 
-One file per topic. Every template is its own `## N. Title` section, so search the topic file below for a keyword (all 155 templates live inside these 11 files).
+One file per topic. Every template is its own `## N. Title` section, so search the topic file below for a keyword (all 156 templates live inside these 11 files).
 
 | File | Topic |
 |---|---|
@@ -39,7 +39,7 @@ One file per topic. Every template is its own `## N. Title` section, so search t
 | `07-动态规划.md` | Memoized search, LIS, LCS, knapsack, interval DP, tree DP, digit DP, slope trick, bitmask DP, monotonic queue optimization, WQS binary search, expected DP, broken-profile DP, SOS DP, Steiner tree, 0-1 fractional programming, divide & conquer on monotone decisions, Slope Trick |
 | `08-杂项.md` | Sprague-Grundy games, ternary search, bitset, Texas hold'em comparison, big integers, expression evaluation, date and time, stress testing and data generation (Windows/Linux), in-contest compile & debug commands, interactive problems |
 | `09-常用STL.md` | Usage cheat sheet: hash containers, heaps, multiset, monotonic queue, coordinate compression, binary search, `string`, tuple sorting, permutations and k-th element, `<numeric>`, pbds (ordered statistics tree, `gp_hash_table`, pairing heap) |
-| `10-随机化.md` | Random utilities, shuffling, minimum enclosing circle, random-weight hashing, Schwartz–Zippel and Freivalds, simulated annealing, hill climbing and 2-opt, Miller–Rabin, Pollard–Rho |
+| `10-随机化.md` | Random utilities, shuffling, minimum enclosing circle, random-weight hashing (set equality and symmetric difference, via `get_hash` on the fly or a precomputed weight table), Schwartz–Zippel and Freivalds, simulated annealing, hill climbing and 2-opt, Miller–Rabin, Pollard–Rho |
 | `11-公式结论速查.md` | Formula and conclusion cheat sheet: combinatorial identities, Catalan, Stirling numbers, binomial inversion and Min-Max inclusion-exclusion, Hall's theorem, common sequences, number theory and graph conclusions, expectation and probability, game conclusions, string conclusions, complexity reference and NTT primitive-root table |
 
 ### `trick合集.md` + `trick库/` — trick quick reference (176 entries)
@@ -64,12 +64,12 @@ Some entries were reorganised from public submissions on [AlgoWiki](https://www.
 - Looking for an algorithm: pick the topic from the table above, then search that file for a keyword (each template is a `## N. Title` section). If the template you need is missing, the "variants" section of a nearby template usually tells you how to adapt one.
 - Every template is its own section: applicable model / complexity / code / usage notes / variants. Each code block carries the headers it needs — **paste it, add `main`, submit**.
 - Before pasting several templates into one file, rename the global variables they share (the usual clashes are `dp / dis / vis / nxt / cnt / pre`); the full clash table is kept locally and is not published here.
-- Code style: plain competitive code without comments (`09-常用STL` and `06-计算几何` are reference sheets and are the exception), global variables with static arrays, braces on their own line, arguments passed as indices rather than arrays, fast IO via `read()/readll()`.
+- Code style: plain competitive code without comments (`09-常用STL` and `06-计算几何` are reference sheets and are the exception, as is the hashing section of `10-随机化`), global variables with static arrays, braces on their own line, arguments passed as indices rather than arrays, fast IO via `read()/readll()`.
 - To print a copy: see [Download the PDFs](#download-the-pdfs); each book ships with a table of contents and page numbers.
 
 ## Verification
 
-- All 155 complete templates pass `g++ -std=c++17 -O2 -fsyntax-only`. You can reproduce it by saving a code block as a `.cpp` and running the same command.
+- All 156 complete templates pass `g++ -std=c++17 -O2 -fsyntax-only`. You can reproduce it by saving a code block as a `.cpp` and running the same command.
 - Per-template verification status (which templates were cross-checked against a brute force and how; the rest are "compile-checked only") is no longer published with this repository. Run a sample before using a template for the first time.
 - Typesetting constraint: keep code lines within 100 characters (count a CJK character as 2). Longer lines get clipped when converting to A4 PDF, and the compiler says nothing about it.
 
